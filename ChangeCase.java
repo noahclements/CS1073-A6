@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class ChangeCase {
 	private String input
 	private String temp;
@@ -26,7 +27,8 @@ public class ChangeCase {
 		}
 
 		public String toTitleCase() {
-
+			Scanner lineScan = new Scanner(input);
+			
 		}
 
 		public String toSentenseCase() {

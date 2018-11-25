@@ -4,8 +4,6 @@ public class GradeOrganizer {
 		Scanner sc = new Scanner(System.in);
 		double temp = 0;
 		double gradeHigh = 0;
-		double gradeLow = 0;
-		double gradeLowSwap = 0;
 		boolean valid = false;
 
 		System.out.println("How many grades will you enter?");
@@ -58,7 +56,8 @@ public class GradeOrganizer {
 				}
 			}
 */
-			double gradeHighSwap = gradeArray[0];
+			final double gradeHighSwap = gradeArray[0];
+			final double gradeLowSwap = gradeArray[gradeArray.length - 1];
 /*
 			for(int i = 0; i < gradeArray.length; i++) {
 				for(int x = gradeArray.length - 1; x > 0; x--) {
@@ -87,7 +86,7 @@ public class GradeOrganizer {
 			}
 		}
 		
-		for(int j = 0; j < gradeArray.length; i++) {
+		for(int j = 0; j < gradeArray.length; j++) {
 			if(gradeArray[j] == gradeHigh) {
 				gradeArray[0] = gradeHigh;
 				gradeArray[j] = gradeHighSwap;
@@ -95,8 +94,20 @@ public class GradeOrganizer {
 		}
 
 
+		double gradeLow = gradeArray[0];
 
+		for(int i = 0; i < gradeArray.length; i++) {
+			if(gradeArray[i] < gradeLow) {	// picked array[0] just to start from top and go to bottom
+				gradeLow = gradeArray[i];
+			}
+		}
 
+		for(int j = 0; j < gradeArray.length; j++) {
+			if(gradeArray[j] == gradeLow) {
+				gradeArray[gradeArray.length - 1] = gradeLow;
+				gradeArray[j] = gradeLowSwap;
+			}
+		}
 
 
 

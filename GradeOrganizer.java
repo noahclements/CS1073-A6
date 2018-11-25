@@ -57,59 +57,72 @@ public class GradeOrganizer {
 				}
 			}
 */
-			//final double gradeHighSwap = gradeArray[0];
-		//	final double gradeLowSwap = gradeArray[gradeArray.length - 1];
+		double gradeHighSwap = 0;
+		double gradeLowSwap = 0;
+		double gradeLow = 100.0;
+
 /*
-			for(int i = 0; i < gradeArray.length; i++) {
-				for(int x = gradeArray.length - 1; x > 0; x--) {
+			for(int i = gradeArray.length - 1; i > 0; i--) {
+				for(int x = 0; x < gradeArray.length; x++) {
 					
-					if(gradeArray[x] > gradeArray[0]) {	// this is for puting the highest grade at the top of the array
+					if(gradeArray[x] > gradeHigh) {	// this is for puting the highest grade at the top of the array
 						gradeHigh = gradeArray[x];
 						gradeHighSwap = gradeArray[0];
 						//gradeArray[i] = gradeArray[x];
 						//gradeArray[0] = gradeHigh;	// done to flip both of the numbers
 					}
-
-					if(gradeArray[0] > gradeArray[x]) {	// this is for putting the LOWEST grade at the bottom of the array
+					if(gradeArray[i] < gradeLow) {	// this is for putting the LOWEST grade at the bottom of the array
 						gradeLow = gradeArray[i];
-						gradeArray[i] = gradeArray[x];
-						gradeArray[gradeArray.length - 1] = gradeLow;	// done to flip both of the numbers
-		
+						gradeLowSwap = gradeArray[gradeArray.length - 1];
+						//gradeArray[i] = gradeArray[x];
+					}
+
+					if(gradeArray[i] == gradeHigh) {
+						gradeArray[0] = gradeHigh;
+						gradeArray[i] = gradeHighSwap;
+					}
+
+					if(gradeArray[x] == gradeLow) {
+						gradeArray[x] = gradeLowSwap;
+						gradeArray[gradeArray.length - 1] = gradeLow;
+					}
+
+
 					
-				}
+				
 			}
 		}
 */
-		double gradeHighSwap = 0;
-		double gradeLowSwap = 0;
+		
 		
 		// version 2
+
+		//find the biggest grade
 		for(int i = 0; i < gradeArray.length; i++) {
 			if(gradeArray[i] > gradeHigh) {
 				gradeHigh = gradeArray[i];
 				gradeHighSwap = gradeArray[0];
 			}
 		}
-		
+		// looks for that grade in the array again
 		for(int j = 0; j < gradeArray.length; j++) {
-			if(gradeArray[j] == gradeHigh) {
+			if(gradeArray[j] == gradeHigh) {	// swaps places
 				gradeArray[0] = gradeHigh;
 				gradeArray[j] = gradeHighSwap;
 			}
 		}
 
 
-		double gradeLow = 100.0;
-
+		// find the lowest grade
 		for(int i = 0; i < gradeArray.length; i++) {
 			if(gradeArray[i] < gradeLow) {	
 				gradeLow = gradeArray[i];
 				gradeLowSwap = gradeArray[gradeArray.length - 1];
 			}
 		}
-
+		// looks for that grade in the array again
 		for(int j = 0; j < gradeArray.length; j++) {
-			if(gradeArray[j] == gradeLow) {
+			if(gradeArray[j] == gradeLow) {	// swaps places
 				gradeArray[j] = gradeLowSwap;
 				gradeArray[gradeArray.length - 1] = gradeLow;
 			}

@@ -4,7 +4,9 @@ public class GradeOrganizer {
 		Scanner sc = new Scanner(System.in);
 		double temp = 0;
 		double gradeHigh = 0;
+		double gradeHighSwap = 0;
 		double gradeLow = 0;
+		double gradeLowSwap = 0;
 		boolean valid = false;
 
 		System.out.println("How many grades will you enter?");
@@ -66,7 +68,7 @@ public class GradeOrganizer {
 						gradeArray[0] = gradeHigh;	// done to flip both of the numbers
 					}
 
-					if(gradeArray[x] < gradeArray[i]) {	// this is for putting the LOWEST grade at the bottom of the array
+					if(gradeArray[i] > gradeArray[x]) {	// this is for putting the LOWEST grade at the bottom of the array
 						gradeLow = gradeArray[i];
 						gradeArray[i] = gradeArray[x];
 						gradeArray[gradeArray.length - 1] = gradeLow;	// done to flip both of the numbers
@@ -76,9 +78,17 @@ public class GradeOrganizer {
 			}
 		}
 
-			// version 2
+		// version 2
+		for(int i = 0; i < gradeArray.length; i++) {
+			if(gradeArray[i] > gradeHigh) {
+				gradeHigh = gradeArray[i];
 
-			//for(int )
+			}
+			if(gradeHigh > gradeArray[i]) {
+
+			}
+		}
+			
 
 
 

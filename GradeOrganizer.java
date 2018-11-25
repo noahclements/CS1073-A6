@@ -4,7 +4,6 @@ public class GradeOrganizer {
 		Scanner sc = new Scanner(System.in);
 		double temp = 0;
 		double gradeHigh = 0;
-		double gradeHighSwap = 0;
 		double gradeLow = 0;
 		double gradeLowSwap = 0;
 		boolean valid = false;
@@ -39,6 +38,7 @@ public class GradeOrganizer {
 			}
 
 
+
 			/*
 			// version 3
 			for(int i = 1; i < gradeArray.length + 1; i++) {
@@ -58,12 +58,14 @@ public class GradeOrganizer {
 				}
 			}
 */
-
+			double gradeHighSwap = gradeArray[0];
+/*
 			for(int i = 0; i < gradeArray.length; i++) {
 				for(int x = gradeArray.length - 1; x > 0; x--) {
 					
 					if(gradeArray[x] > gradeArray[i]) {	// this is for puting the highest grade at the top of the array
 						gradeHigh = gradeArray[i];
+						gradeHighSwap = gradeArray[x];
 						gradeArray[i] = gradeArray[x];
 						gradeArray[0] = gradeHigh;	// done to flip both of the numbers
 					}
@@ -77,18 +79,20 @@ public class GradeOrganizer {
 				}
 			}
 		}
-
+*/
 		// version 2
 		for(int i = 0; i < gradeArray.length; i++) {
 			if(gradeArray[i] > gradeHigh) {
 				gradeHigh = gradeArray[i];
-
-			}
-			if(gradeHigh > gradeArray[i]) {
-
 			}
 		}
-			
+		
+		for(int j = 0; j < gradeArray.length; i++) {
+			if(gradeArray[j] == gradeHigh) {
+				gradeArray[0] = gradeHigh;
+				gradeArray[j] = gradeHighSwap;
+			}
+		}
 
 
 

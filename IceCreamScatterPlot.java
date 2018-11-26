@@ -22,7 +22,6 @@ public class IceCreamScatterPlot {
 			tempRepeat += temp + "\n";
 			priceRepeat += price + "\n";
 
-			//numsRepeat += (temp + "," + price + "\n");
 
 			tokenizer.next();
 			
@@ -33,7 +32,6 @@ public class IceCreamScatterPlot {
 		}
 		valuesArray = new int[2][counter];
 
-		//tokenizer = new Scanner(numsRepeat);
 		Scanner tempScan = new Scanner(tempRepeat);
 		Scanner priceScan = new Scanner(priceRepeat);
 		tempScan.useDelimiter("\n");
@@ -49,6 +47,40 @@ public class IceCreamScatterPlot {
 			
 
 			// PRINTING 2D Array
+			String graph = "";
+			int columnNumPrint = 0;
+			int dollarPrint = 10;
+			System.out.println(title);
+			for(int row = 0; row < 11; row++) {
+				//graph += ("$"+(dollarPrint*100) + "\t" + "|");
+				//dollarPrint--;
+				if(dollarPrint == 0) {
+					System.out.print("$"+(0*100) + "\t" + "L");	// change that later
+				} else {
+					System.out.print("$"+(dollarPrint*100) + "\t" + "|");
+				}
+
+					for(int column = 0; column < 31; column++) {
+
+						if(dollarPrint < 0) {
+							System.out.print(columnNumPrint + "     ");
+							columnNumPrint += 5;
+							System.out.print("-");
+						} if(dollarPrint == 0) {
+							System.out.print("-");
+						} else {
+							System.out.print("x");
+						}
+					}
+					System.out.println();
+					dollarPrint--;
+			}
+
+
+
+
+
+/*
 			for(int i = 0; i < valuesArray.length; i++){
 				for(int j = 0; j < valuesArray[0].length; j++){
 					System.out.print(valuesArray[i][j] + " ");
@@ -56,12 +88,8 @@ public class IceCreamScatterPlot {
 				System.out.println();
 			}
 		
-
-		System.out.println("TITLE IS" + title);
-		System.out.println("array length is : " + valuesArray[0].length);
-		System.out.println("array should be " + counter);
-		//System.out.println(valuesArray[1][7]);
-
+*/
+	
 
 
 	}

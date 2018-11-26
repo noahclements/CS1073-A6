@@ -20,7 +20,6 @@ public class IceCreamScatterPlot {
 			temp = tokenizer.nextInt();
 			valuesArray[temp] = tokenizer.nextInt();
 			tokenizer.next();
-
 		}
 
 		// PRINTING 2D Array
@@ -46,7 +45,11 @@ public class IceCreamScatterPlot {
 						} else if(dollarPrint == 0) {
 							System.out.print("-");
 						} else if(dollarPrint == -1 && columnNumPrint < 31) {
-							System.out.print(columnNumPrint + "    ");
+							if(columnNumPrint >= 10) {
+								System.out.print(columnNumPrint + "   ");
+							} else {
+								System.out.print(columnNumPrint + "    ");
+							}
 							columnNumPrint += 5;
 						} else {
 							System.out.print(" ");

@@ -2,8 +2,6 @@ import java.util.Scanner;
 public class IceCreamScatterPlot {
 	public static void main(String[] args) {
 		int temp = 0;
-		int price = 0;
-		int counter = 0;
 		int[] valuesArray = new int[30];
 
 		Scanner tokenizer = new Scanner(System.in);

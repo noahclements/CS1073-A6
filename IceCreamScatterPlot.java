@@ -4,7 +4,8 @@ public class IceCreamScatterPlot {
 		int temp = 0;
 		int price = 0;
 		int counter = 0;
-		int[][] valuesArray;
+		//int[][] valuesArray;
+		int[] valuesArray = new int[30];
 
 		Scanner tokenizer = new Scanner(System.in);
 		
@@ -12,8 +13,54 @@ public class IceCreamScatterPlot {
 		tokenizer.useDelimiter(",|\\s");
 		String title = tokenizer.nextLine();
 		//String numsRepeat = "";
-		String priceRepeat = "";
-		String tempRepeat = "";
+		//String priceRepeat = "";
+		//String tempRepeat = "";
+
+		while(tokenizer.hasNextInt()) {
+			temp = tokenizer.nextInt();
+			valuesArray[temp] = tokenizer.nextInt();
+			tokenizer.next();
+
+		}
+
+		// PRINTING 2D Array
+			String graph = "";
+			int columnNumPrint = 0;
+			int dollarPrint = 10;
+			int cashPrice = 0;
+			System.out.println(title);
+			for(int row = 0; row < 11; row++) {
+				if(dollarPrint == 0) {
+					cashPrice = 0;
+					System.out.print("$"+(cashPrice) + "\t" + "L");	// change that later
+				} else {
+					cashPrice = dollarPrint * 100;
+					System.out.print("$"+(cashPrice) + "\t" + "|");
+				}
+					for(int column = 0; column < valuesArray.length; column++) {
+						if(valuesArray[column] == cashPrice) {
+							System.out.print("*");
+						} else if(dollarPrint < 0) {
+							System.out.print(columnNumPrint + "     ");
+							columnNumPrint += 5;
+						} else if(dollarPrint == 0) {
+							System.out.print("-");
+						} else {
+							System.out.print(" ");
+						}
+					}
+					System.out.println();
+					dollarPrint--;
+				}
+					
+			
+		
+
+
+		// this is actually kinda a useful algorithm (finds the array length when not given, and also makes two strings with the values given)
+		// but its completely useless for this assignment, maybe useful in the future..
+		// 	maybe the adderall was worth it
+		/*
 		while(tokenizer.hasNextInt()) {
 			
 			temp = tokenizer.nextInt();
@@ -30,7 +77,8 @@ public class IceCreamScatterPlot {
 			System.out.println(price);
 			counter++;
 		}
-		valuesArray = new int[2][counter];
+
+		valuesArray = new int[counter][counter];
 
 		Scanner tempScan = new Scanner(tempRepeat);
 		Scanner priceScan = new Scanner(priceRepeat);
@@ -38,7 +86,7 @@ public class IceCreamScatterPlot {
 		priceScan.useDelimiter("\n");
 		
 			
-		
+			// adding to 2d array
 			for(int x = 0; x < valuesArray[0].length; x++) {
 				valuesArray[0][x] = tempScan.nextInt();
 				valuesArray[1][x] = priceScan.nextInt(); 
@@ -68,16 +116,15 @@ public class IceCreamScatterPlot {
 							System.out.print("-");
 						} if(dollarPrint == 0) {
 							System.out.print("-");
-						} else {
-							System.out.print("x");
+						} else 
+							System.out.print("x"); // fix
 						}
 					}
 					System.out.println();
 					dollarPrint--;
 			}
 
-
-
+*/
 
 
 /*

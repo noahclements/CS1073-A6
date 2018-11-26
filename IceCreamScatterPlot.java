@@ -37,20 +37,21 @@ public class IceCreamScatterPlot {
 					cashPrice = dollarPrint * 100;
 					System.out.print("$"+(cashPrice) + "\t" + "|");
 				}
+				dollarPrint--;
 					for(int column = 0; column < valuesArray.length; column++) {
-						if(valuesArray[column] == cashPrice) {
+						if(valuesArray[column] == cashPrice && valuesArray[column] != 0) {
 							System.out.print("*");
-						} else if(dollarPrint < 0) {
-							System.out.print(columnNumPrint + "     ");
-							columnNumPrint += 5;
 						} else if(dollarPrint == 0) {
 							System.out.print("-");
+						} else if(dollarPrint == -1 && columnNumPrint < 31) {
+							System.out.print(columnNumPrint + "     ");
+							columnNumPrint += 5;
 						} else {
 							System.out.print(" ");
 						}
 					}
 					System.out.println();
-					dollarPrint--;
+					//dollarPrint--;
 				}
 					
 			

@@ -11,9 +11,9 @@ public class ChangeCaseDriver {
 		ChangeCase p1 = new ChangeCase(input);
 		ChangeCase p2 = new ChangeCase(input2);
 		ChangeCase p3 = new ChangeCase(input3);
-		System.out.println(p1.toLowerCase());
-		System.out.println(p2.toUpperCase());
-		System.out.println(p3.toggleCase());
+		System.out.println(p1.toSentenseCase());
+	//	System.out.println(p2.toUpperCase());
+	//	System.out.println(p3.toTitleCase());
 
 		
 

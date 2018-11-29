@@ -16,10 +16,8 @@ public class ChangeCase {
 				temp = input.charAt(i);
 				if(temp >= 'A' && temp <= 'Z') {
 					temp += 32;
-					newSentence += temp;
-				} else {
-					newSentence += temp;
-				}
+				} 
+				newSentence += temp;
 			}
 			return newSentence;
 		}
@@ -29,10 +27,8 @@ public class ChangeCase {
 				temp = input.charAt(i);
 				if(temp >= 'a' && temp <= 'z') {
 					temp -= 32;
-					newSentence += temp;
-				} else {
-					newSentence += temp;
 				}
+				newSentence += temp;
 			}
 			return newSentence;
 		}
@@ -68,10 +64,8 @@ public class ChangeCase {
 				temp = input.charAt(i);
 				if(temp >= 'a' && temp <= 'z') {
 					temp -= 32;
-					//newSentence += temp;
 				} else if(temp >= 'A' && temp <= 'Z') {
 					temp += 32;
-					//newSentence += temp;
 				}
 				newSentence += temp;
 			}

@@ -3,9 +3,11 @@ public class GradeOrganizer {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		double temp = 0;
-		double gradeHigh = 0;
-		boolean valid = false;
 		int counter = 1;
+		double gradeHigh = 0;
+		double gradeLow = 100.0;
+		int highIndex = 0;
+		int lowIndex = 0;
 
 		System.out.println("How many grades will you enter?");
 		int numOfGrades = sc.nextInt();
@@ -24,58 +26,39 @@ public class GradeOrganizer {
 				gradeArray[i] = temp;
 			}
 
-		double gradeHighSwap = 0;
-		double gradeLowSwap = 0;
-		double gradeLow = 100.0;
 
-		// version 2
 
-		//find the biggest grade
+		// find highest grade
 		for(int i = 0; i < gradeArray.length; i++) {
 			if(gradeArray[i] > gradeHigh) {
 				gradeHigh = gradeArray[i];
-				gradeHighSwap = gradeArray[0];
+				highIndex = i;
 			}
 		}
-		// looks for that grade in the array again
-		for(int j = 0; j < gradeArray.length; j++) {
-			if(gradeArray[j] == gradeHigh) {	// swaps places
-				gradeArray[0] = gradeHigh;
-				gradeArray[j] = gradeHighSwap;
-			}
-		}
+		// swaps values
+		gradeArray[highIndex] = gradeArray[0];
+		gradeArray[0] = gradeHigh;
 
+		
 
 		// find the lowest grade
 		for(int i = 0; i < gradeArray.length; i++) {
 			if(gradeArray[i] < gradeLow) {	
 				gradeLow = gradeArray[i];
-				gradeLowSwap = gradeArray[gradeArray.length - 1];
-			}
+				lowIndex = i;
+			} 
 		}
-		// looks for that grade in the array again
-		for(int j = 0; j < gradeArray.length; j++) {
-			if(gradeArray[j] == gradeLow) {	// swaps places
-				gradeArray[j] = gradeLowSwap;
-				gradeArray[gradeArray.length - 1] = gradeLow;
-			}
-		}
+		// swaps values
+		gradeArray[lowIndex] = gradeArray[gradeArray.length - 1];
+		gradeArray[gradeArray.length - 1] = gradeLow; 
 
 
-
-
+			// prints out values
 			System.out.println("Reordered grades");
 			for(int j = 0; j < gradeArray.length; j++){
 				System.out.println(gradeArray[j]);
 			}
 
-
 		}
-		
-
-
-
 
 	}
-
-

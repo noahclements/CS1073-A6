@@ -5,6 +5,7 @@ public class ChangeCase {
 	private int counter = 0;
 	private char test;
 	private String newSentence = "";
+	private boolean endOfSentence = false;
 
 	public ChangeCase(String inputIn) {
 		input = inputIn;
@@ -67,19 +68,43 @@ public class ChangeCase {
 				temp = input.charAt(i);
 				if(temp >= 'a' && temp <= 'z') {
 					temp -= 32;
-					newSentence += temp;
+					//newSentence += temp;
 				} else if(temp >= 'A' && temp <= 'Z') {
 					temp += 32;
-					newSentence += temp;
+					//newSentence += temp;
 				}
+				newSentence += temp;
 			}
 			return newSentence;
 			
 		}
 
-		public String toSentenseCase() {
-		 return "";
+		public String toSentenceCase() {
+		 for(int i = 0; i < input.length(); i++) {
+		 	temp = input.charAt(i);
+		 	if(temp == '!' || temp == '?' || temp == '.') {
+		 		endOfSentence = true;
+		 	}
+
+		 	if(i == 0 || endOfSentence == true) {
+		 		if(temp >= 'A' && temp <= 'Z') {
+		 			endOfSentence = false;
+		 		} if(temp >= 'a' && temp <= 'z') {
+		 			temp -= 32;
+		 			endOfSentence = false;
+		 		}
+		 	} else if(temp >= 'A' && temp <= 'Z' && endOfSentence == false) {
+		 		temp += 32;
+		 	} 
+		 	newSentence += temp;
+		 }
+		 	return newSentence;
 		}
+
+
+
+
+		
 
 
 

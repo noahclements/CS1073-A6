@@ -24,9 +24,9 @@ public class IceCreamScatterPlot {
 			for(int row = 0; row < 12; row++) {
 				if(dollarPrint == 0) {
 					cashPrice = 0;
-					System.out.print("$"+(cashPrice) + "\t" + "L");	// change that later
+					System.out.print("$"+(cashPrice) + "\t" + "\u2514");	// change that later
 				} else if(row == 11){
-					System.out.print("\t");
+					System.out.print("\t ");
 				} else {
 					cashPrice = dollarPrint * 100;
 					System.out.print("$"+(cashPrice) + "\t" + "|");

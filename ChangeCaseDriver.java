@@ -1,17 +1,13 @@
+/**
+	A class representing the driver class for changing cases
+	@author Noah Clements 3585596
+*/
 import java.util.Scanner;
 public class ChangeCaseDriver {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-
 		String input;
-		//String input2 = input;
-		//String input3 = input;
-		//ChangeCase p1 = new ChangeCase(input);
-		//ChangeCase p2 = new ChangeCase(input2);
-		//ChangeCase p3 = new ChangeCase(input3);
-		//System.out.println(p1.toSentenceCase());
-	//	System.out.println(p2.toUpperCase());
-	//	System.out.println(p3.toTitleCase());
+
 		System.out.println("Enter a string ('-1' to quit)");
 		input = sc.nextLine();
 		if(input.equals("-1")) {

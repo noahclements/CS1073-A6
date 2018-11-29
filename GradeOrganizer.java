@@ -1,3 +1,7 @@
+/**
+	A class representing the grade organizer
+	@author Noah Clements 3585596
+*/
 import java.util.Scanner;
 public class GradeOrganizer {
 	public static void main(String[] args) {
@@ -15,11 +19,11 @@ public class GradeOrganizer {
 		double[] gradeArray = new double[numOfGrades];
 
 
-				// version 2
+				// asks until it hits the numOfGrades max
 			for(int i = 0; i < gradeArray.length; i++, counter++) {
 				System.out.println("Enter grade " + counter);
 				temp = sc.nextDouble();
-				while(temp < 0 || temp > 100.0) {
+				while(temp < 0 || temp > 100.0) {	// keeps asking until its valid input
 					System.out.println("Enter grade " + counter);
 					temp = sc.nextDouble();
 				}

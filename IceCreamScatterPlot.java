@@ -1,3 +1,7 @@
+/**
+	A class representing the Ice Cream Scatter Plot
+	@author Noah Clements 3585596
+*/
 import java.util.Scanner;
 public class IceCreamScatterPlot {
 	public static void main(String[] args) {
@@ -7,9 +11,9 @@ public class IceCreamScatterPlot {
 		Scanner tokenizer = new Scanner(System.in);
 		
 		
-		tokenizer.useDelimiter(",|\\s");
-		String title = tokenizer.nextLine();
-
+		tokenizer.useDelimiter(",|\\s"); // ignores comma's and spaces
+		String title = tokenizer.nextLine(); // gets the title
+		// goes through the input until it hits "end"
 		while(tokenizer.hasNextInt()) {
 			temp = tokenizer.nextInt();
 			valuesArray[temp] = tokenizer.nextInt();

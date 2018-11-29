@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class IceCreamScatterPlot {
 	public static void main(String[] args) {
 		int temp = 0;
-		int[] valuesArray = new int[30];
+		int[] valuesArray = new int[31];
 
 		Scanner tokenizer = new Scanner(System.in);
 		
@@ -12,7 +12,7 @@ public class IceCreamScatterPlot {
 
 		while(tokenizer.hasNextInt()) {
 			temp = tokenizer.nextInt();
-			valuesArray[temp-1] = tokenizer.nextInt();
+			valuesArray[temp] = tokenizer.nextInt();
 			tokenizer.next();
 		}
 
